@@ -117,6 +117,9 @@ spec:
       serviceAccountName: portainer-sa-clusteradmin
       volumes:
         - name: "data"
+          hostpath:
+            path: /mnt/ssd/apps/portainer
+            type: Directory
           persistentVolumeClaim:
             claimName: portainer
       containers:
@@ -127,7 +130,7 @@ spec:
           - '--tunnel-port=30776'          
           volumeMounts:
             - name: data
-              mountPath: /mnt/ssd/apps/portainer
+              mountPath: /date
           ports:
             - name: http
               containerPort: 9000
