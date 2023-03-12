@@ -72,7 +72,7 @@ spec:
       targetPort: 9000
       protocol: TCP
       name: http
-      nodePort: 30777  
+      nodePort: 9001  
     - port: 9443
       targetPort: 9443
       protocol: TCP
@@ -127,7 +127,7 @@ spec:
           - '--tunnel-port=30776'          
           volumeMounts:
             - name: data
-              mountPath: /data              
+              mountPath: /mnt/ssd/apps/portainer
           ports:
             - name: http
               containerPort: 9000
